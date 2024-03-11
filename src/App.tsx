@@ -30,11 +30,13 @@ function App() {
           </div>
         </header>
 
-        <main className="mt-8 px-9">
-          <div className="flex flex-col gap-5">
+        <main className="px-9">
+
+          {/* ABOUT ME */}
+          <div className="flex flex-col gap-5 mt-8 ">
             <img src="src/assets/sl-one.jpg" alt="SL Image" />
 
-            <div className="flex flex-col items-center gap-2">
+            <div className="flex flex-col items-center gap-3">
               <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">About Me</h2>
               <hr className="w-[54px] border-2" />
             </div>
@@ -45,6 +47,27 @@ function App() {
               SammyLee has collaborated with Lil kesh on a song titled “wait” Ice prince, Mr Eazi, Dj enimoney, Dremo, Skales,D-black and many more talented artistes.
             </p>
 
+          </div>
+
+          {/* GALLERY */}
+          <div className="flex flex-col gap-5 mt-8">
+            <div className="flex flex-col items-center gap-3">
+              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Gallery</h2>
+              <hr className="w-[42px] border-2" />
+            </div>
+
+            <div className="flex flex-col gap-7">
+              <img src="src/assets/gallery/sl-two.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-three.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-four.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-five.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-six.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-seven.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-eight.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-nine.jpg" alt="SL Image" />
+              <img src="src/assets/gallery/sl-ten.png" alt="SL Image" />
+              <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" />
+            </div>
           </div>
         </main>
       </div>
