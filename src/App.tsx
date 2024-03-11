@@ -23,12 +23,30 @@ function App() {
             <hr className="w-[80px]" />
 
             <div>
-              <h1 className="text-[1.5rem] font-rubik font-bold text-white leading-[90%]">SAMMYLEE</h1>
+              <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%]">SAMMYLEE</h1>
               <p className="font-rublik font-semibold text-[0.875rem] text-[#CCCCCC] leading-[90%]">Musician | Producer</p>
             </div>
             <button className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%]">CONTACT ME</button>
           </div>
         </header>
+
+        <main className="mt-8 px-9">
+          <div className="flex flex-col gap-5">
+            <img src="src/assets/sl-one.jpg" alt="SL Image" />
+
+            <div className="flex flex-col items-center gap-2">
+              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">About Me</h2>
+              <hr className="w-[54px] border-2" />
+            </div>
+
+            <p className="font-inter text-[0.813rem] leading-[120%] text-[#CCCCCC]">
+              Adewunmi Ayobami Samuel a.k.a SammyLee was born on the 3rd of August and brought up in Lagos into the family of Adewunmi.<br /><br />
+              His unique style of music is called Afro-Urban which has sweet harmonies, melodies designed to create excitement and fun for people to dance. He plays 3 musical instruments such as piano, guitar and drum set and he’s also a music producer.<br /><br />
+              SammyLee has collaborated with Lil kesh on a song titled “wait” Ice prince, Mr Eazi, Dj enimoney, Dremo, Skales,D-black and many more talented artistes.
+            </p>
+
+          </div>
+        </main>
       </div>
     </>
   )
