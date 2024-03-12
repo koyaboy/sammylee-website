@@ -1,3 +1,5 @@
+import MusicPlayer from "./components/MusicPlayer"
+
 function App() {
   return (
     <>
@@ -48,6 +50,11 @@ function App() {
             </p>
 
           </div>
+
+          {/* DISCOGRAPHY */}
+          <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
+          <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
+
 
           {/* GALLERY */}
           <div className="flex flex-col gap-5 mt-8">
