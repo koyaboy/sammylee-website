@@ -52,8 +52,27 @@ function App() {
           </div>
 
           {/* DISCOGRAPHY */}
-          <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
-          <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
+          <div className="flex flex-col gap-5 mt-8">
+            <div className="flex flex-col items-center gap-3">
+              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Discography</h2>
+              <hr className="w-[42px] border-2" />
+            </div>
+
+            <div className="flex flex-col gap-7">
+              <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
+              <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
+
+              {/* ADD CORRECT SONG FOR TROPICANA */}
+              <MusicPlayer title={"tropicana"} src="" />
+
+              {/* COMING SOON ART */}
+              <div className="relative w-[300px] h-[300px] bg-blue-500">
+                <img src="src/assets/covers/enjoyment.jpg" alt="" className="blur-md" />
+                <p className="absolute font-rubik font-bold text-[1.25rem] text-[#FB5C5C] leading-[120%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">COMING SOON</p>
+              </div>
+            </div>
+          </div>
+
 
 
           {/* GALLERY */}
