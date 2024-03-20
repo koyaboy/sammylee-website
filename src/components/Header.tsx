@@ -31,14 +31,14 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                 </div>
             )}
 
-            <header className="bg-[url('src/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2">
+            <header className="bg-[url('src/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] xl:h-[650px]">
                 <div className="flex justify-between items-center">
-                    <div className="w-[44px] h-[35px] -ml-[10px]">
+                    <div className="w-[44px] h-[35px] -ml-[10px] md:w-[60px] md:h-[45px]">
                         <img src="src/assets/logo.png" alt="SL Logo"></img>
                     </div>
 
-                    <button onClick={() => toggleNavigation()}>
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <button className='min-[900px]:hidden' onClick={() => toggleNavigation()}>
+                        <svg className='md:w-[24px] md:h-[24px]' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <rect width="16" height="16" fill="url(#pattern0)" />
                             <defs>
                                 <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
@@ -48,18 +48,30 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                             </defs>
                         </svg>
                     </button>
+
+                    <nav className='hidden min-[900px]:block'>
+                        <ul className='text-[#F0EAD6] flex gap-3 font-rubik text-[1rem] leading-[120%]'>
+                            <li><button onClick={() => { onScrollToHome(); toggleNavigation() }}>HOME</button></li>
+                            <li><button onClick={() => { onScrollToAbout(); toggleNavigation() }}>ABOUT</button></li>
+                            <li><button onClick={() => { onScrollToDiscography(); toggleNavigation() }}>DISCOGRAPHY</button></li>
+                            <li><button onClick={() => { onScrollToGallery(); toggleNavigation() }}>GALLERY</button></li>
+                            <li><button onClick={() => { onScrollToContact(); toggleNavigation() }}>CONTACT</button></li>
+                        </ul>
+                    </nav>
                 </div>
 
-                <div className="flex flex-col gap-2 mt-6">
-                    <hr className="w-[80px]" />
+                <div className="flex flex-col gap-2 mt-6 w-[40%] sm:mt-16 md:mt-[70px]" >
+                    <hr className="w-[80px] sm:w-[110px] md:w-[125px]" />
 
-                    <div>
-                        <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%]">SAMMYLEE</h1>
-                        <p className="font-rublik font-semibold text-[0.875rem] text-[#CCCCCC] leading-[90%]">Musician | Producer</p>
+                    <div className='flex flex-col sm:gap-1 md:gap-3'>
+                        <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%] sm:text-[2rem] md:text-[3rem]">SAMMYLEE</h1>
+                        <p className="font-rubik font-semibold text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem]">Musician | Producer</p>
                     </div>
 
+                    <p className='hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem]'>Aim for success, strive for greatness. Turn your next project
+                        into a grammy award winning masterpiece</p>
                     <button
-                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%]"
+                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%] sm:text-[0.875rem] sm:w-[110px] md:w-[125px] sm:h-8"
                         onClick={() => { onScrollToContact() }}
                     >
                         CONTACT ME

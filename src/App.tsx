@@ -24,7 +24,9 @@ function App() {
 
           {/* ABOUT ME */}
           <div ref={aboutRef} className="flex flex-col gap-5 mt-8 ">
-            <img src="src/assets/sl-one.jpg" alt="SL Image" />
+            <div className="max-w-[675px] ml-auto mr-auto" >
+              <img src="src/assets/sl-one.jpg" alt="SL Image" className="w-full h-full" />
+            </div>
 
             <div className="flex flex-col items-center gap-3">
               <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">About Me</h2>
@@ -83,7 +85,7 @@ function App() {
         </main>
 
         {/* FOOTER */}
-        <footer ref={contactRef} className="bg-[url('src/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8">
+        <footer ref={contactRef} className="bg-[url('src/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8 sm:h-[500px]">
           <div className="flex flex-col items-center gap-3">
             <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Contact Me</h2>
             <hr className="w-[65px] border-2" />
