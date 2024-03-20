@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Header = () => {
+const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScrollToGallery, onScrollToContact }: any) => {
     const [isOpen, setIsOpen] = useState(false)
 
     function toggleNavigation() {
@@ -21,11 +21,11 @@ const Header = () => {
 
                     <nav className='mt-12'>
                         <ul className='text-[#F0EAD6] flex flex-col gap-4 font-rubik text-[1rem] leading-[120%]'>
-                            <li>HOME</li>
-                            <li>ABOUT</li>
-                            <li>DISCOGRAPHY</li>
-                            <li>GALLERY</li>
-                            <li>CONTACT</li>
+                            <li><button onClick={() => { onScrollToHome(); toggleNavigation() }}>HOME</button></li>
+                            <li><button onClick={() => { onScrollToAbout(); toggleNavigation() }}>ABOUT</button></li>
+                            <li><button onClick={() => { onScrollToDiscography(); toggleNavigation() }}>DISCOGRAPHY</button></li>
+                            <li><button onClick={() => { onScrollToGallery(); toggleNavigation() }}>GALLERY</button></li>
+                            <li><button onClick={() => { onScrollToContact(); toggleNavigation() }}>CONTACT</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -57,7 +57,13 @@ const Header = () => {
                         <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%]">SAMMYLEE</h1>
                         <p className="font-rublik font-semibold text-[0.875rem] text-[#CCCCCC] leading-[90%]">Musician | Producer</p>
                     </div>
-                    <button className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%]">CONTACT ME</button>
+
+                    <button
+                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%]"
+                        onClick={() => { onScrollToContact() }}
+                    >
+                        CONTACT ME
+                    </button>
                 </div>
             </header>
         </>

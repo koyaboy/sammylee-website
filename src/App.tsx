@@ -1,16 +1,29 @@
 import MusicPlayer from "./components/MusicPlayer"
 import Header from "./components/Header"
+import { useRef } from "react"
 
 function App() {
+  const homeRef = useRef<HTMLDivElement>(null)
+  const aboutRef = useRef<HTMLDivElement>(null)
+  const discographyRef = useRef<HTMLDivElement>(null)
+  const galleryRef = useRef<HTMLDivElement>(null)
+  const contactRef = useRef<HTMLElement>(null)
+
   return (
     <>
-      <div className="bg-[#333333] min-h-screen">
-        <Header />
+      <div ref={homeRef} className="bg-[#333333] min-h-screen">
+        <Header
+          onScrollToHome={() => { homeRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
+          onScrollToAbout={() => { aboutRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
+          onScrollToDiscography={() => { discographyRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
+          onScrollToGallery={() => { galleryRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
+          onScrollToContact={() => { contactRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
+        />
 
         <main className="px-9">
 
           {/* ABOUT ME */}
-          <div className="flex flex-col gap-5 mt-8 ">
+          <div ref={aboutRef} className="flex flex-col gap-5 mt-8 ">
             <img src="src/assets/sl-one.jpg" alt="SL Image" />
 
             <div className="flex flex-col items-center gap-3">
@@ -27,7 +40,7 @@ function App() {
           </div>
 
           {/* DISCOGRAPHY */}
-          <div className="flex flex-col gap-5 mt-8">
+          <div ref={discographyRef} className="flex flex-col gap-5 mt-8">
             <div className="flex flex-col items-center gap-3">
               <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Discography</h2>
               <hr className="w-[42px] border-2" />
@@ -48,7 +61,7 @@ function App() {
 
 
           {/* GALLERY */}
-          <div className="flex flex-col gap-5 mt-8">
+          <div ref={galleryRef} className="flex flex-col gap-5 mt-8">
             <div className="flex flex-col items-center gap-3">
               <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Gallery</h2>
               <hr className="w-[42px] border-2" />
@@ -70,7 +83,7 @@ function App() {
         </main>
 
         {/* FOOTER */}
-        <footer className="bg-[url('src/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8">
+        <footer ref={contactRef} className="bg-[url('src/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8">
           <div className="flex flex-col items-center gap-3">
             <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Contact Me</h2>
             <hr className="w-[65px] border-2" />
