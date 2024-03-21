@@ -23,7 +23,7 @@ function App() {
         <main className="px-9">
 
           {/* ABOUT ME */}
-          <div ref={aboutRef} className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-16 min-[900px]:gap-12">
+          <div ref={aboutRef} className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-20 min-[900px]:gap-12">
             <div className="max-w-[675px] ml-auto mr-auto" >
               <img src="src/assets/sl-about-me-mobile.jpg" alt="SL Image" className="w-full h-full min-[900px]:hidden" />
               <img src="src/assets/sl-about-me-desktop.jpg" alt="SL Image" className="hidden min-[900px]:block" />
@@ -35,7 +35,7 @@ function App() {
                 <hr className="w-[54px] border-2 min-[900px]:mr-auto min-[900px]:w-[120px]" />
               </div>
 
-              <p className="font-inter text-[0.813rem] leading-[120%] text-[#CCCCCC] md:text-[1rem] md:px-8 min-[900px]:px-0 min-[900px]:text-[1.05rem]">
+              <p className="font-inter mt-4 text-[0.813rem] leading-[120%] text-[#CCCCCC] md:text-[1rem] md:px-8 min-[900px]:px-0  min-[900px]:mt-0 min-[900px]:text-[1.05rem]">
                 Adewunmi Ayobami Samuel a.k.a SammyLee was born on the 3rd of August and brought up in Lagos into the family of Adewunmi.<br /><br />
                 His unique style of music is called Afro-Urban which has sweet harmonies, melodies designed to create excitement and fun for people to dance. He plays 3 musical instruments such as piano, guitar and drum set and he’s also a music producer.<br /><br />
                 SammyLee has collaborated with Lil kesh on a song titled “wait” Ice prince, Mr Eazi, Dj enimoney, Dremo, Skales,D-black and many more talented artistes.
@@ -45,20 +45,24 @@ function App() {
           </div>
 
           {/* DISCOGRAPHY */}
-          <div ref={discographyRef} className="flex flex-col gap-5 mt-8">
+          <div ref={discographyRef} className="flex flex-col gap-5 mt-8 md:mt-12 min-[900px]:mt-20">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Discography</h2>
+              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%] md:text-[1.75rem] min-[900px]:text-[2.25rem]">Discography</h2>
               <hr className="w-[42px] border-2" />
             </div>
 
-            <div className="flex flex-col gap-7">
+            <p className="hidden text-center w-[55%] ml-auto mr-auto font-inter text-[1rem] text-[#CCCCCC] leading-[120%] md:block lg:text-[1.05rem]">
+              Music is an art where creativity can be limitless. I’ve had the chance to work with talented artistes across the globe. Take a look at some of the the projects and collaborations that I personally produced or worked on
+            </p>
+
+            <div className="flex flex-col gap-7 md:flex-row md:flex-wrap md:gap-[5%]">
               <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
               <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
               <MusicPlayer title={"tropicana"} src={"src/tracks/sl-tropicana.mp3"} />
 
-              <div className="relative w-[300px] h-[300px]">
-                <img src="src/assets/covers/in-my-head.jpg" alt="in my head cover art" className="blur-sm" />
-                <p className="absolute font-rubik font-bold text-[1.25rem] text-red-700 leading-[120%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%]">COMING SOON</p>
+              <div className="relative w-full md:mt-5 md:max-w-[45%] h-full bg-red-500">
+                <img src="src/assets/covers/in-my-head.jpg" alt="in my head cover art" className="blur-sm h-full w-full" />
+                <p className="absolute font-rubik font-bold text-[5vw] text-red-700 leading-[120%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] md:text-[1.25rem]">COMING SOON</p>
               </div>
             </div>
           </div>

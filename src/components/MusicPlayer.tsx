@@ -9,8 +9,8 @@ type MusicPlayer = {
 
 const MusicPlayer = ({ title, src }: MusicPlayer) => {
     return (
-        <div className=''>
-            <div className=''>
+        <div className='md:max-w-[45%] md:mt-5'>
+            <div>
                 <img src={`src/assets/covers/${title}.jpg`} alt={`${title} Music Cover`} />
             </div>
             <AudioPlayer
