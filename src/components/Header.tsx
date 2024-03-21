@@ -51,11 +51,11 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
                     <nav className='hidden min-[900px]:block'>
                         <ul className='text-[#F0EAD6] flex gap-3 font-rubik text-[1rem] leading-[120%]'>
-                            <li><button onClick={() => { onScrollToHome(); toggleNavigation() }}>HOME</button></li>
-                            <li><button onClick={() => { onScrollToAbout(); toggleNavigation() }}>ABOUT</button></li>
-                            <li><button onClick={() => { onScrollToDiscography(); toggleNavigation() }}>DISCOGRAPHY</button></li>
-                            <li><button onClick={() => { onScrollToGallery(); toggleNavigation() }}>GALLERY</button></li>
-                            <li><button onClick={() => { onScrollToContact(); toggleNavigation() }}>CONTACT</button></li>
+                            <li><button onClick={() => { onScrollToHome() }}>HOME</button></li>
+                            <li><button onClick={() => { onScrollToAbout() }}>ABOUT</button></li>
+                            <li><button onClick={() => { onScrollToDiscography() }}>DISCOGRAPHY</button></li>
+                            <li><button onClick={() => { onScrollToGallery() }}>GALLERY</button></li>
+                            <li><button onClick={() => { onScrollToContact() }}>CONTACT</button></li>
                         </ul>
                     </nav>
                 </div>
