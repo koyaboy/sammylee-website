@@ -31,7 +31,7 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                 </div>
             )}
 
-            <header className="bg-[url('src/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] xl:h-[650px]">
+            <header className="bg-[url('src/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] lg:py-5 xl:h-[650px]">
                 <div className="flex justify-between items-center">
                     <div className="w-[44px] h-[35px] -ml-[10px] md:w-[60px] md:h-[45px]">
                         <img src="src/assets/logo.png" alt="SL Logo"></img>
@@ -50,7 +50,7 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                     </button>
 
                     <nav className='hidden min-[900px]:block'>
-                        <ul className='text-[#F0EAD6] flex gap-3 font-rubik text-[1rem] leading-[120%]'>
+                        <ul className='text-[#F0EAD6] flex gap-3 font-rubik text-[1rem] leading-[120%] lg:gap-5'>
                             <li><button onClick={() => { onScrollToHome() }}>HOME</button></li>
                             <li><button onClick={() => { onScrollToAbout() }}>ABOUT</button></li>
                             <li><button onClick={() => { onScrollToDiscography() }}>DISCOGRAPHY</button></li>
@@ -60,18 +60,18 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                     </nav>
                 </div>
 
-                <div className="flex flex-col gap-2 mt-6 w-[40%] sm:mt-16 md:mt-[70px]" >
+                <div className="flex flex-col gap-2 mt-6 w-[40%] sm:mt-16 md:mt-[70px] lg:mt-[140px] xl:mt-[208px]" >
                     <hr className="w-[80px] sm:w-[110px] md:w-[125px]" />
 
                     <div className='flex flex-col sm:gap-1 md:gap-3'>
-                        <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%] sm:text-[2rem] md:text-[3rem]">SAMMYLEE</h1>
-                        <p className="font-rubik font-semibold text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem]">Musician | Producer</p>
+                        <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%] sm:text-[2rem] md:text-[3rem] lg:text-[4.25rem] xl:text-[5rem]">SAMMYLEE</h1>
+                        <p className="font-rubik font-semibold text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.35rem] xl:text-[1.65rem]">Musician | Producer</p>
                     </div>
 
-                    <p className='hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem]'>Aim for success, strive for greatness. Turn your next project
+                    <p className='hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem] lg:text-[0.875rem] xl:text-[1rem]'>Aim for success, strive for greatness. Turn your next project
                         into a grammy award winning masterpiece</p>
                     <button
-                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%] sm:text-[0.875rem] sm:w-[110px] md:w-[125px] sm:h-8"
+                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%] sm:text-[0.875rem] sm:w-[110px] md:w-[125px] sm:h-8 lg:text-[1rem] lg:h-9 lg:w-[140px]"
                         onClick={() => { onScrollToContact() }}
                     >
                         CONTACT ME
