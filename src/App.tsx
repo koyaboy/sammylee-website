@@ -26,8 +26,8 @@ function App() {
           {/* ABOUT ME */}
           <div ref={aboutRef} className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-20 min-[900px]:gap-12">
             <div className="max-w-[675px] ml-auto mr-auto" >
-              <img src="src/assets/sl-about-me-mobile.jpg" alt="SL Image" className="w-full h-full min-[900px]:hidden" />
-              <img src="src/assets/sl-about-me-desktop.jpg" alt="SL Image" className="hidden min-[900px]:block" />
+              <img src="assets/sl-about-me-mobile.jpg" alt="SL Image" className="w-full h-full min-[900px]:hidden" />
+              <img src="assets/sl-about-me-desktop.jpg" alt="SL Image" className="hidden min-[900px]:block" />
             </div>
 
             <div className="min-[900px]:flex min-[900px]:flex-col min-[900px]:gap-4 min-[900px]:justify-center">
@@ -57,10 +57,10 @@ function App() {
             </p>
 
             <div className="flex flex-col gap-7 md:flex-row md:flex-wrap md:justify-evenly md:px-12">
-              <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
-              <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
-              <MusicPlayer title={"tropicana"} src={"src/tracks/sl-tropicana.mp3"} />
-              <MusicPlayer title={"in-my-head"} src={"src/tracks/sl-in-my-head.mp3"} />
+              <MusicPlayer title={"enjoyment"} src={"tracks/sl-enjoyment.mp3"} />
+              <MusicPlayer title={"wait"} src={"tracks/sl-wait.mp3"} />
+              <MusicPlayer title={"tropicana"} src={"tracks/sl-tropicana.mp3"} />
+              <MusicPlayer title={"in-my-head"} src={"tracks/sl-in-my-head.mp3"} />
 
               {/* <div className="relative w-full md:mt-5 md:max-w-[45%] h-full bg-red-500">
                 <img src="src/assets/covers/in-my-head.jpg" alt="in my head cover art" className="blur-sm h-full w-full" />
@@ -95,23 +95,23 @@ function App() {
               columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
             >
               <Masonry gutter="12px">
-                <img src="src/assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="" />
-                <img src="src/assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="" />
               </Masonry>
             </ResponsiveMasonry>
           </div>
         </main>
 
         {/* FOOTER */}
-        <footer ref={contactRef} className="bg-[url('src/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8 sm:h-[500px] min-[900px]:bg-[url('src/assets/sl-footer-desktop.jpg')] min-[900px]:h-[420px] bg-center">
+        <footer ref={contactRef} className="bg-[url('assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8 sm:h-[500px] min-[900px]:bg-[url('assets/sl-footer-desktop.jpg')] min-[900px]:h-[420px] bg-center">
           <div className="flex flex-col items-center gap-3 min-[900px]:hidden">
             <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Contact Me</h2>
             <hr className="w-[65px] border-2" />
