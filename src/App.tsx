@@ -111,7 +111,7 @@ function App() {
         </main>
 
         {/* FOOTER */}
-        <footer ref={contactRef} className="bg-[url('./assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8 sm:h-[500px] min-[900px]:bg-[url('./assets/sl-footer-desktop.jpg')] min-[900px]:h-[420px] bg-center">
+        <footer ref={contactRef} className="bg-[url('/assets/sl-footer-mobile.jpg')] bg-cover bg-no-repeat h-[482px] px-9 py-12 mt-8 sm:h-[500px] min-[900px]:bg-[url('/assets/sl-footer-desktop.jpg')] min-[900px]:h-[420px] bg-center">
           <div className="flex flex-col items-center gap-3 min-[900px]:hidden">
             <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Contact Me</h2>
             <hr className="w-[65px] border-2" />
