@@ -1,6 +1,7 @@
 import MusicPlayer from "./components/MusicPlayer"
 import Header from "./components/Header"
 import { useRef } from "react"
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 
 function App() {
   const homeRef = useRef<HTMLDivElement>(null)
@@ -55,39 +56,57 @@ function App() {
               Music is an art where creativity can be limitless. I’ve had the chance to work with talented artistes across the globe. Take a look at some of the the projects and collaborations that I personally produced or worked on
             </p>
 
-            <div className="flex flex-col gap-7 md:flex-row md:flex-wrap md:gap-[5%]">
+            <div className="flex flex-col gap-7 md:flex-row md:flex-wrap md:justify-evenly md:px-12">
               <MusicPlayer title={"enjoyment"} src={"src/tracks/sl-enjoyment.mp3"} />
               <MusicPlayer title={"wait"} src={"src/tracks/sl-wait.mp3"} />
               <MusicPlayer title={"tropicana"} src={"src/tracks/sl-tropicana.mp3"} />
+              <MusicPlayer title={"in-my-head"} src={"src/tracks/sl-in-my-head.mp3"} />
 
-              <div className="relative w-full md:mt-5 md:max-w-[45%] h-full bg-red-500">
+              {/* <div className="relative w-full md:mt-5 md:max-w-[45%] h-full bg-red-500">
                 <img src="src/assets/covers/in-my-head.jpg" alt="in my head cover art" className="blur-sm h-full w-full" />
                 <p className="absolute font-rubik font-bold text-[5vw] text-red-700 leading-[120%] left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] md:text-[1.25rem]">COMING SOON</p>
-              </div>
+              </div> */}
             </div>
           </div>
 
 
 
           {/* GALLERY */}
-          <div ref={galleryRef} className="flex flex-col gap-5 mt-8">
+          <div ref={galleryRef} className="flex flex-col gap-5 mt-8 md:mt-12 min-[900px]:mt-20">
             <div className="flex flex-col items-center gap-3">
-              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%]">Gallery</h2>
+              <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%] md:text-[1.75rem] min-[900px]:text-[2.25rem]">Gallery</h2>
               <hr className="w-[42px] border-2" />
             </div>
+            {/* 
+            <div className="flex flex-col gap-7 md:grid md:grid-cols-2">
+              <img src="src/assets/gallery/sl-two.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-three.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-four.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-five.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-six.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-seven.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-eight.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-nine.jpg" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-ten.png" alt="SL Image" className="" />
+              <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" className="" />
+            </div> */}
 
-            <div className="flex flex-col gap-7">
-              <img src="src/assets/gallery/sl-two.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-three.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-four.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-five.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-six.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-seven.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-eight.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-nine.jpg" alt="SL Image" />
-              <img src="src/assets/gallery/sl-ten.png" alt="SL Image" />
-              <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" />
-            </div>
+            <ResponsiveMasonry
+              columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+            >
+              <Masonry gutter="12px">
+                <img src="src/assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="" />
+                <img src="src/assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="" />
+              </Masonry>
+            </ResponsiveMasonry>
           </div>
         </main>
 
