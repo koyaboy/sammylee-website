@@ -39,7 +39,7 @@ function App() {
               <p className="font-inter mt-4 text-[0.813rem] leading-[120%] text-[#CCCCCC] md:text-[1rem] md:px-8 min-[900px]:px-0  min-[900px]:mt-0 min-[900px]:text-[1.05rem]">
                 Adewunmi Ayobami Samuel a.k.a SammyLee was born on the 3rd of August and brought up in Lagos into the family of Adewunmi.<br /><br />
                 His unique style of music is called Afro-Urban which has sweet harmonies, melodies designed to create excitement and fun for people to dance. He plays 3 musical instruments such as piano, guitar and drum set and he’s also a music producer.<br /><br />
-                SammyLee has collaborated with Lil kesh on a song titled “wait” Ice prince, Mr Eazi, Dj enimoney, Dremo, Skales,D-black and many more talented artistes.
+                SammyLee has collaborated with artistes such as Lil kesh on a song titled “wait” and his yet to be released EP featuring Ice prince, Mr Eazi, Dj enimoney, Dremo, Skales,D-black and many more talented artistes.
               </p>
             </div>
 
