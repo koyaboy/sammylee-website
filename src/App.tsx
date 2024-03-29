@@ -1,17 +1,77 @@
 import MusicPlayer from "./components/MusicPlayer"
 import Header from "./components/Header"
-import { useRef } from "react"
+import { FormEventHandler, useRef, useState, CSSProperties } from "react"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import axios from "axios"
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import SyncLoader from "react-spinners/SyncLoader";
 
 function App() {
+  const [name, setName] = useState<string>('')
+  const [email, setEmail] = useState<string>('')
+  const [message, setMessage] = useState<string>('')
+  const [isLoading, setIsLoading] = useState<boolean>(false)
+  const [color, setColor] = useState("#ffffff");
+
   const homeRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
   const discographyRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLElement>(null)
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+
+    setIsLoading(true)
+
+    const serviceId = "service_e7oa17l"
+    const templateId = 'template_orw4ung'
+    const publicKey = 'dFLENVUW2PIvuTfG_'
+
+    const data = {
+      service_id: serviceId,
+      template_id: templateId,
+      user_id: publicKey,
+      template_params: {
+        from_name: name,
+        from_email: email,
+        to_name: 'Adekoya Ireoluwatomiwa',
+        message: message
+      }
+    }
+
+    try {
+      const res = await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
+      setName('');
+      setEmail('');
+      setMessage('');
+      setIsLoading(false)
+
+      toast.success("Thanks for sending an email, I'll be in touch ❤")
+    } catch (error) {
+      setIsLoading(false)
+      console.log(error)
+      toast.error("Something went wrong, please try again ❤")
+    }
+  }
+
   return (
     <>
+      <ToastContainer />
+
+      {isLoading && (
+        <div className="bg-black opacity-50 fixed top-0 right-0 bottom-0 left-0 min-w-screen min-h-screen flex justify-center items-center">
+          <SyncLoader
+            color={color}
+            loading={isLoading}
+            size={100}
+            aria-label="Loading Spinner"
+            data-testid="loader"
+          />
+        </div>
+      )}
+
       <div ref={homeRef} className="bg-[#333333] min-h-screen">
         <Header
           onScrollToHome={() => { homeRef.current?.scrollIntoView({ behavior: 'smooth' }) }}
@@ -118,23 +178,44 @@ function App() {
           </div>
 
           <div className="w-full min-[900px]:flex min-[900px]:gap-20 min-[900px]:items-center min-[900px]:h-full">
-            <form className="mt-8 flex flex-col gap-6 min-[900px]:order-2 w-full">
+            <form onSubmit={handleSubmit} className="mt-8 flex flex-col gap-6 min-[900px]:order-2 w-full">
               <div>
-                <label htmlFor="email"></label>
-                <input id="email" type="text" className="bg-transparent outline-none border-b w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] pb-2 min-[900px]:text-[1rem]" placeholder="Email Address" />
+                <label htmlFor="name"></label>
+                <input
+                  id="name"
+                  type="text"
+                  className="bg-transparent outline-none border-b w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] pb-2 min-[900px]:text-[1rem]"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)} />
               </div>
 
               <div>
-                <label htmlFor="subject"></label>
-                <input id="subject" type="text" className="bg-transparent outline-none border-b w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] pb-2 min-[900px]:text-[1rem]" placeholder="Subject" />
+                <label htmlFor="email"></label>
+                <input
+                  id="email"
+                  type="text"
+                  className="bg-transparent outline-none border-b w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] pb-2 min-[900px]:text-[1rem]"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)} />
               </div>
 
               <div>
                 <label htmlFor="message"></label>
-                <textarea id="message" className="bg-transparent outline-none border-b h-6 resize-none w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] overflow-hidden min-[900px]:text-[1rem] min-[900px]:h-7" placeholder="Message" />
+                <textarea
+                  id="message"
+                  className="bg-transparent outline-none border-b h-6 resize-none w-full font-inter text-[0.813rem] text-[#F0EAD6] leading-[120%] overflow-hidden min-[900px]:text-[1rem] min-[900px]:h-7"
+                  placeholder="Message"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)} />
               </div>
 
-              <button className="bg-[#008080] text-[#F0EAD6] w-[120px] h-[30px] rounded-[0.25rem] font-inter text-[0.813rem] leading-[120%] font-medium min-[900px]:ml-auto">SUBMIT</button>
+              <button
+                disabled={name == "" || email == "" || message == ""}
+                className="bg-[#008080] text-[#F0EAD6] w-[120px] h-[30px] rounded-[0.25rem] font-inter text-[0.813rem] leading-[120%] font-medium min-[900px]:ml-auto disabled:opacity-50 disabled:cursor-not-allowed">
+                SUBMIT
+              </button>
             </form>
 
             <div className="min-[900px]:order-1 min-[900px]:w-[60%]">
