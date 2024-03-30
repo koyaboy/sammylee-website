@@ -6,6 +6,10 @@ import axios from "axios"
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import SyncLoader from "react-spinners/SyncLoader";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import ScrollTrigger from "gsap/src/ScrollTrigger"
+
 
 function App() {
   const [name, setName] = useState<string>('')
@@ -19,6 +23,22 @@ function App() {
   const discographyRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLElement>(null)
+
+  gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+  useGSAP(() => {
+    gsap.fromTo('.gallery_img',
+      { opacity: 0, x: 20 },
+      {
+        scrollTrigger: {
+          trigger: '.gallery_img',
+          start: "top center",
+          // toggleActions: "restart none none none",
+        },
+        opacity: 1, x: 0, stagger: 0.35, duration: 0.5, ease: "elastic.out(1, 0.3)"
+      }
+    )
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -155,16 +175,16 @@ function App() {
               columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
             >
               <Masonry gutter="12px">
-                <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="" />
-                <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="" />
+                <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
               </Masonry>
             </ResponsiveMasonry>
           </div>
