@@ -1,8 +1,56 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import SplitType from 'split-type'
+import TextPlugin from 'gsap/TextPlugin';
+
+gsap.registerPlugin(useGSAP, TextPlugin)
 
 const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScrollToGallery, onScrollToContact }: any) => {
     const [isOpen, setIsOpen] = useState(false)
 
+    const ourText = new SplitType('.sammylee-text', { types: 'chars' })
+    const chars = ourText.chars
+
+    // const desc = new SplitType('.desc', { types: 'chars' })
+    // const descChars = desc.chars
+
+
+    const sammyleeDesc = ["A Musician", "A Producer", 'An Entertainer', "An Artiste"]
+
+    useGSAP(() => {
+        // let tl = gsap.timeline()
+
+        gsap.from(chars,
+            {
+                opacity: 0,
+                y: -20,
+                stagger: 0.08,
+                ease: "elastic.Out",
+                delay: 0.35,
+                duration: 1.25,
+                onComplete: () => { wordsTimeline.play() }
+            }
+        )
+
+        gsap.to('.cursor', {
+            opacity: 0,
+            ease: "power2.inOut",
+            repeat: -1
+        })
+
+        let wordsTimeline = gsap.timeline({ repeat: -1 }).pause()
+
+        sammyleeDesc.forEach(desc => {
+            let descTl = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 })
+            descTl.to('.desc', {
+                duration: 1,
+                text: desc
+            })
+            wordsTimeline.add(descTl)
+        })
+
+    }, [])
     function toggleNavigation() {
         setIsOpen(prevIsOpen => !prevIsOpen)
     }
@@ -64,11 +112,15 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                     <hr className="w-[80px] sm:w-[110px] md:w-[125px]" />
 
                     <div className='flex flex-col sm:gap-1 md:gap-3'>
-                        <h1 className="text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%] sm:text-[2rem] md:text-[3rem] lg:text-[4.25rem] xl:text-[5rem]">SAMMYLEE</h1>
-                        <p className="font-rubik font-semibold text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.35rem] xl:text-[1.65rem]">Musician | Producer</p>
-                    </div>
+                        <h1 className="sammylee-text text-[1.5rem] font-rubik font-bold text-[#F0EAD6] leading-[90%] sm:text-[2rem] md:text-[3rem] lg:text-[4.25rem] xl:text-[5rem]">SAMMYLEE</h1>
 
-                    <p className='hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem] lg:text-[0.875rem] xl:text-[1rem]'>Aim for success, strive for greatness. Turn your next project
+                        <div className='flex items-center'>
+                            <span className='font-rubik text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.35rem] xl:text-[1.65rem]'>Hi, I'm</span>
+                            <p className="desc ml-[6px] font-rubik font-bold text-[0.675rem] text-[#CCCCCC] leading-[90%] sm:text-[0.875rem] md:text-[1.125rem] lg:text-[1.35rem] xl:text-[1.65rem]"> </p>
+                            <span className="cursor text-[#CCCCCC]">_</span>
+                        </div>
+                    </div>
+                    <p className='sammyleeDesc hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem] lg:text-[0.875rem] xl:text-[1rem]'>Aim for success, strive for greatness. Turn your next project
                         into a grammy award winning masterpiece</p>
                     <button
                         className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%] sm:text-[0.875rem] sm:w-[110px] md:w-[125px] sm:h-8 lg:text-[1rem] lg:h-9 lg:w-[140px]"
