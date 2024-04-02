@@ -38,7 +38,7 @@ function App() {
         opacity: 1, x: 0, stagger: 0.35, duration: 0.5, ease: "elastic.out(1, 0.3)"
       }
     )
-  })
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()

@@ -50,10 +50,12 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
             wordsTimeline.add(descTl)
         })
 
-    }, [])
+    }, {})
+
     function toggleNavigation() {
         setIsOpen(prevIsOpen => !prevIsOpen)
     }
+
     return (
         <>
             {isOpen && (
@@ -108,7 +110,7 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                     </nav>
                 </div>
 
-                <div className="flex flex-col gap-2 mt-6 w-[40%] sm:mt-16 md:mt-[70px] lg:mt-[140px] xl:mt-[208px]" >
+                <div className="flex flex-col gap-2 mt-6 w-[50%] sm:mt-16 md:mt-[70px] lg:mt-[140px] xl:mt-[208px]" >
                     <hr className="w-[80px] sm:w-[110px] md:w-[125px]" />
 
                     <div className='flex flex-col sm:gap-1 md:gap-3'>
@@ -123,10 +125,11 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                     <p className='sammyleeDesc hidden text-[#CCCCCC] font-inter leading-[120%] md:block md:text-[0.75rem] lg:text-[0.875rem] xl:text-[1rem]'>Aim for success, strive for greatness. Turn your next project
                         into a grammy award winning masterpiece</p>
                     <button
-                        className="bg-[#008080] text-white rounded-[4px] text-[0.625rem] font-semibold w-[80px] h-6 leading-[120%] sm:text-[0.875rem] sm:w-[110px] md:w-[125px] sm:h-8 lg:text-[1rem] lg:h-9 lg:w-[140px]"
+                        className="styled-button -mt-2 flex p-1 text-white rounded-md text-[0.625rem] font-semibold w-[100px] h-8 leading-[120%] sm:text-[0.875rem] sm:w-[130px] sm:mt-0 md:w-[125px] sm:h-9 lg:text-[1rem] lg:h-11 lg:w-[170px]"
                         onClick={() => { onScrollToContact() }}
                     >
-                        CONTACT ME
+                        <span className='bg-black flex justify-center items-center w-full h-full rounded-md tracking-wider'>CONTACT ME</span>
+                        {/* bg-[#008080] */}
                     </button>
                 </div>
             </header>
