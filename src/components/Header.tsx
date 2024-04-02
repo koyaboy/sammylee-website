@@ -9,18 +9,14 @@ gsap.registerPlugin(useGSAP, TextPlugin)
 const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScrollToGallery, onScrollToContact }: any) => {
     const [isOpen, setIsOpen] = useState(false)
 
+    const mobileNavRef = useRef<HTMLDivElement>(null)
+
     const ourText = new SplitType('.sammylee-text', { types: 'chars' })
     const chars = ourText.chars
-
-    // const desc = new SplitType('.desc', { types: 'chars' })
-    // const descChars = desc.chars
-
 
     const sammyleeDesc = ["A Musician", "A Producer", 'An Entertainer', "An Artiste"]
 
     useGSAP(() => {
-        // let tl = gsap.timeline()
-
         gsap.from(chars,
             {
                 opacity: 0,
@@ -52,10 +48,23 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
     }, {})
 
-    function toggleNavigation() {
-        setIsOpen(prevIsOpen => !prevIsOpen)
+
+    useGSAP(() => {
+        gsap.from(mobileNavRef.current, {
+            x: 500,
+            duration: 0.5
+        });
+    }, { dependencies: [isOpen] })
+
+
+    const openNavigation = () => {
+        setIsOpen(true)
+
     }
 
+    function closeNavigation() {
+        setIsOpen(false)
+    }
     return (
         <>
             {isOpen && (
@@ -64,18 +73,18 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
             )}
 
             {isOpen && (
-                <div className='bg-[#333333] w-[60vw] min-h-screen fixed z-[999] right-0 px-3'>
-                    <button onClick={() => toggleNavigation()} className='absolute right-4 top-4'>
+                <div ref={mobileNavRef} className='bg-[#333333] w-[60vw] min-h-screen fixed z-[999] right-0 px-3'>
+                    <button onClick={() => closeNavigation()} className='absolute right-4 top-4'>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px" height="20px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: 'normal' }}><g transform="scale(8.53333,8.53333)"><path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path></g></g></svg>
                     </button>
 
                     <nav className='mt-12'>
                         <ul className='text-[#F0EAD6] flex flex-col gap-4 font-rubik text-[1rem] leading-[120%]'>
-                            <li><button onClick={() => { onScrollToHome(); toggleNavigation() }}>HOME</button></li>
-                            <li><button onClick={() => { onScrollToAbout(); toggleNavigation() }}>ABOUT</button></li>
-                            <li><button onClick={() => { onScrollToDiscography(); toggleNavigation() }}>DISCOGRAPHY</button></li>
-                            <li><button onClick={() => { onScrollToGallery(); toggleNavigation() }}>GALLERY</button></li>
-                            <li><button onClick={() => { onScrollToContact(); toggleNavigation() }}>CONTACT</button></li>
+                            <li><button onClick={() => { onScrollToHome(); closeNavigation() }}>HOME</button></li>
+                            <li><button onClick={() => { onScrollToAbout(); closeNavigation() }}>ABOUT</button></li>
+                            <li><button onClick={() => { onScrollToDiscography(); closeNavigation() }}>DISCOGRAPHY</button></li>
+                            <li><button onClick={() => { onScrollToGallery(); closeNavigation() }}>GALLERY</button></li>
+                            <li><button onClick={() => { onScrollToContact(); closeNavigation() }}>CONTACT</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -87,7 +96,7 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                         <img src="assets/logo.png" alt="SL Logo"></img>
                     </div>
 
-                    <button className='min-[900px]:hidden' onClick={() => toggleNavigation()}>
+                    <button className='min-[900px]:hidden' onClick={() => openNavigation()}>
                         <svg className='md:w-[24px] md:h-[24px]' xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16" fill="none">
                             <rect width="16" height="16" fill="url(#pattern0)" />
                             <defs>
