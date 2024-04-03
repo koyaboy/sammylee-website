@@ -24,7 +24,7 @@ function App() {
   const discographyRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLElement>(null)
-  const images = useRef<HTMLDivElement>(null)
+  // const images = useRef<HTMLDivElement>(null)
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -221,7 +221,7 @@ function App() {
             </div> */}
 
             <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+              columnsCountBreakPoints={{ 320: 1, 768: 2, 1024: 3 }}
             >
               <Masonry gutter="12px">
                 <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
