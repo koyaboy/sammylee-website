@@ -67,8 +67,7 @@ function App() {
       y: 200,
       scrollTrigger: {
         trigger: galleryRef.current,
-        start: '0 center',
-        markers: true,
+        start: '0 top',
       },
       stagger: 0.25,
       duration: 0.5,
