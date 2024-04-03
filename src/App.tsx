@@ -1,6 +1,6 @@
 import MusicPlayer from "./components/MusicPlayer"
 import Header from "./components/Header"
-import { FormEventHandler, useRef, useState, CSSProperties } from "react"
+import { useRef, useState } from "react"
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import axios from "axios"
 import { toast, ToastContainer } from 'react-toastify'
@@ -16,7 +16,8 @@ function App() {
   const [email, setEmail] = useState<string>('')
   const [message, setMessage] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [color, setColor] = useState("#ffffff");
+
+  const color = "#ffffff"
 
   const homeRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
@@ -62,7 +63,7 @@ function App() {
     }
 
     try {
-      const res = await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
+      await axios.post("https://api.emailjs.com/api/v1.0/email/send", data);
       setName('');
       setEmail('');
       setMessage('');
