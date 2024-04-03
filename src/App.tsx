@@ -39,6 +39,48 @@ function App() {
         opacity: 1, x: 0, stagger: 0.35, duration: 0.5, ease: "elastic.out(1, 0.3)"
       }
     )
+
+    // let aboutTl = gsap.timeline()
+
+    // aboutTl.from('.aboutImg', {
+    //   y: 300,
+    //   scrollTrigger: {
+    //     trigger: '.aboutImg',
+    //     markers: true
+    //     // toggleActions: "restart none none none"
+    //   },
+    //   duration: 2,
+    // })
+
+    gsap.from(".aboutImg", {
+      opacity: 0,
+      y: 300,
+      scrollTrigger: {
+        trigger: aboutRef.current,
+        start: "center 80%",
+        markers: true,
+      },
+      duration: 1,
+    })
+
+    gsap.from('.aboutText', {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: aboutRef.current,
+        start: "center 80%"
+      },
+      duration: 4,
+    })
+
+    // aboutTl.to('.aboutText', {
+    //   opacity: 0,
+    //   scrollTrigger: {
+    //     trigger: aboutRef.current,
+    //     toggleActions: "restart none none none"
+    //   },
+    //   duration: 2,
+    // })
+
   }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -106,12 +148,12 @@ function App() {
 
           {/* ABOUT ME */}
           <div ref={aboutRef} className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-20 min-[900px]:gap-12">
-            <div className="max-w-[675px] ml-auto mr-auto" >
+            <div className="aboutImg max-w-[675px] ml-auto mr-auto" >
               <img src="assets/sl-about-me-mobile.jpg" alt="SL Image" className="w-full h-full min-[900px]:hidden" />
               <img src="assets/sl-about-me-desktop.jpg" alt="SL Image" className="hidden min-[900px]:block" />
             </div>
 
-            <div className="min-[900px]:flex min-[900px]:flex-col min-[900px]:gap-4 min-[900px]:justify-center">
+            <div className="aboutText min-[900px]:flex min-[900px]:flex-col min-[900px]:gap-4 min-[900px]:justify-center">
               <div className="flex flex-col items-center gap-3">
                 <h2 className="font-rubik font-semibold text-[1.25rem] text-[#F0EAD6] leading-[90%] md:text-[1.75rem] min-[900px]:mr-auto min-[900px]:text-[2.25rem]">About Me</h2>
                 <hr className="w-[54px] border-2 min-[900px]:mr-auto min-[900px]:w-[120px]" />
