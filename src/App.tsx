@@ -30,19 +30,6 @@ function App() {
 
   useGSAP(() => {
 
-    gsap.from('.img-container', {
-      opacity: 0,
-      y: 200,
-      scrollTrigger: {
-        trigger: galleryRef.current,
-        start: '0 center',
-      },
-      delay: 0.025,
-      duration: 0.8,
-      ease: "power1.inOut"
-    },
-    )
-
     gsap.from(".aboutImg", {
       opacity: 0,
       y: 300,
@@ -62,6 +49,18 @@ function App() {
       duration: 4,
     })
 
+    gsap.from('.img-container', {
+      opacity: 0,
+      y: 200,
+      scrollTrigger: {
+        trigger: galleryRef.current,
+        start: '0 center',
+      },
+      delay: 0.025,
+      duration: 0.8,
+      ease: "power1.inOut"
+    },
+    )
 
     gsap.from(".musicPlayer", {
       y: -200,
@@ -208,10 +207,10 @@ function App() {
               <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" className="" />
             </div> */}
 
-            <div ref={images} className="img-container">
-              <ResponsiveMasonry
-                columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
-              >
+            <ResponsiveMasonry
+              columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+            >
+              <div ref={images} className="img-container">
                 <Masonry gutter="12px">
                   <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
                   <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
@@ -226,8 +225,8 @@ function App() {
                   <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
                   <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
                 </Masonry>
-              </ResponsiveMasonry>
-            </div>
+              </div>
+            </ResponsiveMasonry>
           </div>
         </main>
 
