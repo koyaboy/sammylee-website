@@ -68,6 +68,7 @@ function App() {
       scrollTrigger: {
         trigger: galleryRef.current,
         start: '0 center',
+        markers: true,
       },
       stagger: 0.25,
       duration: 0.5,
@@ -223,22 +224,20 @@ function App() {
             <ResponsiveMasonry
               columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
             >
-              <div ref={images} className="img-container">
-                <Masonry gutter="12px">
-                  <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-thirteen-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-fifteen-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
-                </Masonry>
-              </div>
+              <Masonry gutter="12px">
+                <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-thirteen-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-fifteen-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
+              </Masonry>
             </ResponsiveMasonry>
           </div>
         </main>
