@@ -49,15 +49,28 @@ function App() {
       duration: 4,
     })
 
-    gsap.from('.img-container', {
+    // gsap.from('.img-container', {
+    //   opacity: 0,
+    //   y: 200,
+    //   scrollTrigger: {
+    //     trigger: galleryRef.current,
+    //     start: '0 center',
+    //   },
+    //   delay: 0.025,
+    //   duration: 0.8,
+    //   ease: "power1.inOut"
+    // },
+    // )
+
+    gsap.from('.gallery_img', {
       opacity: 0,
       y: 200,
       scrollTrigger: {
         trigger: galleryRef.current,
         start: '0 center',
       },
-      delay: 0.025,
-      duration: 0.8,
+      stagger: 0.25,
+      duration: 0.5,
       ease: "power1.inOut"
     },
     )
