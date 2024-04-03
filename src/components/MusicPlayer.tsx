@@ -1,14 +1,34 @@
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 type MusicPlayer = {
     title: string,
     src: string
 }
 
+gsap.registerPlugin(useGSAP, ScrollTrigger)
+
+
 const MusicPlayer = ({ title, src }: MusicPlayer) => {
+
+    const musicPlayerRef = useRef<HTMLDivElement>(null)
+
+    // useGSAP(() => {
+    //     gsap.from(musicPlayerRef.current!, {
+    //         y: -200,
+    //         opacity: 0,
+    //         stagger: 2,
+    //         duration: 0.8,
+    //         scrollTrigger: musicPlayerRef.current!
+    //     })
+    // })
+
     return (
-        <div className='md:w-[45%] md:mt-5'>
+        <div ref={musicPlayerRef}>
             <div>
                 <img src={`assets/covers/${title}.jpg`} alt={`${title} Music Cover`} />
             </div>

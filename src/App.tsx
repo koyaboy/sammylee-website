@@ -28,29 +28,20 @@ function App() {
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
-    gsap.fromTo('.gallery_img',
-      { opacity: 0, x: 20 },
+    gsap.from('.gallery_img',
       {
+        opacity: 0,
         scrollTrigger: {
           trigger: '.gallery_img',
-          start: "top center",
-          // toggleActions: "restart none none none",
+          start: "top top",
+          // toggleActions: "restart none none reverse",
         },
-        opacity: 1, x: 0, stagger: 0.35, duration: 0.5, ease: "elastic.out(1, 0.3)"
-      }
+        x: 20,
+        stagger: 0.35,
+        duration: 0.5,
+        ease: "elastic.out(1, 0.3)"
+      },
     )
-
-    // let aboutTl = gsap.timeline()
-
-    // aboutTl.from('.aboutImg', {
-    //   y: 300,
-    //   scrollTrigger: {
-    //     trigger: '.aboutImg',
-    //     markers: true
-    //     // toggleActions: "restart none none none"
-    //   },
-    //   duration: 2,
-    // })
 
     gsap.from(".aboutImg", {
       opacity: 0,
@@ -58,7 +49,6 @@ function App() {
       scrollTrigger: {
         trigger: aboutRef.current,
         start: "center 80%",
-        markers: true,
       },
       duration: 1,
     })
@@ -72,14 +62,17 @@ function App() {
       duration: 4,
     })
 
-    // aboutTl.to('.aboutText', {
-    //   opacity: 0,
-    //   scrollTrigger: {
-    //     trigger: aboutRef.current,
-    //     toggleActions: "restart none none none"
-    //   },
-    //   duration: 2,
-    // })
+
+    gsap.from(".musicPlayer", {
+      y: -200,
+      opacity: 0,
+      stagger: 0.55,
+      duration: 0.8,
+      scrollTrigger: {
+        trigger: '.musicPlayer',
+        start: "20% top",
+      },
+    })
 
   }, [])
 
@@ -180,10 +173,11 @@ function App() {
             </p>
 
             <div className="flex flex-col gap-7 md:flex-row md:flex-wrap md:justify-evenly md:px-12">
-              <MusicPlayer title={"enjoyment"} src={"tracks/sl-enjoyment.mp3"} />
-              <MusicPlayer title={"wait"} src={"tracks/sl-wait.mp3"} />
-              <MusicPlayer title={"tropicana"} src={"tracks/sl-tropicana.mp3"} />
-              <MusicPlayer title={"in-my-head"} src={"tracks/sl-in-my-head.mp3"} />
+
+              <div className="musicPlayer md:w-[45%] md:mt-5"><MusicPlayer title={"enjoyment"} src={"tracks/sl-enjoyment.mp3"} /></div>
+              <div className="musicPlayer md:w-[45%] md:mt-5"><MusicPlayer title={"wait"} src={"tracks/sl-wait.mp3"} /></div>
+              <div className="musicPlayer md:w-[45%] md:mt-5"><MusicPlayer title={"tropicana"} src={"tracks/sl-tropicana.mp3"} /></div>
+              <div className="musicPlayer md:w-[45%] md:mt-5"><MusicPlayer title={"in-my-head"} src={"tracks/sl-in-my-head.mp3"} /></div>
 
               {/* <div className="relative w-full md:mt-5 md:max-w-[45%] h-full bg-red-500">
                 <img src="src/assets/covers/in-my-head.jpg" alt="in my head cover art" className="blur-sm h-full w-full" />
