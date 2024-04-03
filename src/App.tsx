@@ -30,7 +30,7 @@ function App() {
 
   useGSAP(() => {
 
-    gsap.from(images.current, {
+    gsap.from('.img-container', {
       opacity: 0,
       y: 200,
       scrollTrigger: {
@@ -208,7 +208,7 @@ function App() {
               <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" className="" />
             </div> */}
 
-            <div ref={images}>
+            <div ref={images} className="img-container">
               <ResponsiveMasonry
                 columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
               >
