@@ -217,7 +217,9 @@ function App() {
                 <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-thirteen-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
+                <img src="assets/gallery/sl-fifteen-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
                 <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
