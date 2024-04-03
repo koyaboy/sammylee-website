@@ -24,23 +24,24 @@ function App() {
   const discographyRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLElement>(null)
+  const images = useRef<HTMLDivElement>(null)
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
-    gsap.from('.gallery_img',
-      {
-        opacity: 0,
-        scrollTrigger: {
-          trigger: '.gallery_img',
-          start: "top top",
-          // toggleActions: "restart none none reverse",
-        },
-        x: 20,
-        stagger: 0.35,
-        duration: 0.5,
-        ease: "elastic.out(1, 0.3)"
+
+    gsap.from(images.current, {
+      opacity: 0,
+      y: 200,
+      scrollTrigger: {
+        trigger: galleryRef.current,
+        start: '80px center',
+        markers: true,
       },
+      delay: 0.1,
+      duration: 1,
+      ease: "power1.inOut"
+    },
     )
 
     gsap.from(".aboutImg", {
@@ -74,7 +75,7 @@ function App() {
       },
     })
 
-  }, [])
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -208,24 +209,26 @@ function App() {
               <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" className="" />
             </div> */}
 
-            <ResponsiveMasonry
-              columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
-            >
-              <Masonry gutter="12px">
-                <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-thirteen-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-fifteen-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
-                <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
-              </Masonry>
-            </ResponsiveMasonry>
+            <div ref={images}>
+              <ResponsiveMasonry
+                columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
+              >
+                <Masonry gutter="12px">
+                  <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-three-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-eleven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-five-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-four-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-thirteen-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-six-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-fifteen-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-eight-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-seven-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-ten-desktop.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="assets/gallery/sl-nine-desktop.jpg" alt="SL Image" className="gallery_img" />
+                </Masonry>
+              </ResponsiveMasonry>
+            </div>
           </div>
         </main>
 
