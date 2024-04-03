@@ -11,12 +11,12 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
     const mobileNavRef = useRef<HTMLDivElement>(null)
 
-    const ourText = new SplitType('.sammylee-text', { types: 'chars' })
-    const chars = ourText.chars
-
-    const sammyleeDesc = ["A Musician", "A Producer", 'An Entertainer', "An Artiste"]
-
     useGSAP(() => {
+        const ourText = new SplitType('.sammylee-text', { types: 'chars' })
+        const chars = ourText.chars
+
+        const sammyleeDesc = ["A Musician", "A Producer", 'An Entertainer', "An Artiste"]
+
         gsap.from(chars,
             {
                 opacity: 0,
