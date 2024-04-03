@@ -22,3 +22,53 @@
         background-position-x: 200vw;
     }
 }
+
+.navButton,
+.navButtonMobile {
+    position: relative;
+}
+
+.navButtonMobile {
+    width: fit-content
+}
+
+.navButton::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    margin-top: 4px;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.2s ease-in;
+}
+
+.navButtonMobile::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    margin-top: 4px;
+    top: 100%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all 0.2s ease-in;
+}
+
+.navButton:hover::after {
+    width: 50%
+}
+
+.navButtonMobile:hover::after {
+    width: 100%;
+}
+
+.social-icon path {
+    transition: all 0.2s ease-in;
+}
+
+.social-icon:hover path {
+    fill: #000000;
+}

@@ -80,11 +80,11 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
                     <nav className='mt-12'>
                         <ul className='text-[#F0EAD6] flex flex-col gap-4 font-rubik text-[1rem] leading-[120%]'>
-                            <li><button onClick={() => { onScrollToHome(); closeNavigation() }}>HOME</button></li>
-                            <li><button onClick={() => { onScrollToAbout(); closeNavigation() }}>ABOUT</button></li>
-                            <li><button onClick={() => { onScrollToDiscography(); closeNavigation() }}>DISCOGRAPHY</button></li>
-                            <li><button onClick={() => { onScrollToGallery(); closeNavigation() }}>GALLERY</button></li>
-                            <li><button onClick={() => { onScrollToContact(); closeNavigation() }}>CONTACT</button></li>
+                            <li className='navButtonMobile'><button onClick={() => { onScrollToHome(); closeNavigation() }}>HOME</button></li>
+                            <li className='navButtonMobile'><button onClick={() => { onScrollToAbout(); closeNavigation() }}>ABOUT</button></li>
+                            <li className='navButtonMobile'><button onClick={() => { onScrollToDiscography(); closeNavigation() }}>DISCOGRAPHY</button></li>
+                            <li className='navButtonMobile'><button onClick={() => { onScrollToGallery(); closeNavigation() }}>GALLERY</button></li>
+                            <li className='navButtonMobile'><button onClick={() => { onScrollToContact(); closeNavigation() }}>CONTACT</button></li>
                         </ul>
                     </nav>
                 </div>
@@ -110,11 +110,11 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
                     <nav className='hidden min-[900px]:block'>
                         <ul className='text-[#F0EAD6] flex gap-3 font-rubik text-[1rem] leading-[120%] lg:gap-5'>
-                            <li><button onClick={() => { onScrollToHome() }}>HOME</button></li>
-                            <li><button onClick={() => { onScrollToAbout() }}>ABOUT</button></li>
-                            <li><button onClick={() => { onScrollToDiscography() }}>DISCOGRAPHY</button></li>
-                            <li><button onClick={() => { onScrollToGallery() }}>GALLERY</button></li>
-                            <li><button onClick={() => { onScrollToContact() }}>CONTACT</button></li>
+                            <li className='navButton'><button onClick={() => { onScrollToHome() }}>HOME</button></li>
+                            <li className='navButton'><button onClick={() => { onScrollToAbout() }}>ABOUT</button></li>
+                            <li className='navButton'><button onClick={() => { onScrollToDiscography() }}>DISCOGRAPHY</button></li>
+                            <li className='navButton'><button onClick={() => { onScrollToGallery() }}>GALLERY</button></li>
+                            <li className='navButton'><button onClick={() => { onScrollToContact() }}>CONTACT</button></li>
                         </ul>
                     </nav>
                 </div>
