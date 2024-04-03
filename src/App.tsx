@@ -24,11 +24,24 @@ function App() {
   const discographyRef = useRef<HTMLDivElement>(null)
   const galleryRef = useRef<HTMLDivElement>(null)
   const contactRef = useRef<HTMLElement>(null)
-  const imagesRef = useRef<HTMLDivElement>(null)
+  const images = useRef<HTMLDivElement>(null)
 
   gsap.registerPlugin(useGSAP, ScrollTrigger);
 
   useGSAP(() => {
+
+    gsap.from(images.current, {
+      opacity: 0,
+      y: 200,
+      scrollTrigger: {
+        trigger: galleryRef.current,
+        start: '0 center',
+      },
+      delay: 0.025,
+      duration: 1.25,
+      ease: "power1.inOut"
+    },
+    )
 
     gsap.from(".aboutImg", {
       opacity: 0,
@@ -49,18 +62,6 @@ function App() {
       duration: 4,
     })
 
-    gsap.from(imagesRef.current, {
-      opacity: 0,
-      y: 200,
-      scrollTrigger: {
-        trigger: galleryRef.current,
-        start: '0 center',
-      },
-      delay: 0.025,
-      duration: 0.8,
-      ease: "power1.inOut"
-    },
-    )
 
     gsap.from(".musicPlayer", {
       y: -200,
@@ -207,9 +208,9 @@ function App() {
               <img src="src/assets/gallery/sl-eleven.jpg" alt="SL Image" className="" />
             </div> */}
 
-            <div ref={imagesRef}>
+            <div ref={images}>
               <ResponsiveMasonry
-                columnsCountBreakPoints={{ 320: 1, 768: 2, 1024: 3 }}
+                columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
               >
                 <Masonry gutter="12px">
                   <img src="assets/gallery/sl-two-desktop.jpg" alt="SL Image" className="gallery_img" />
