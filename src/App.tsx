@@ -36,7 +36,6 @@ function App() {
       scrollTrigger: {
         trigger: galleryRef.current,
         start: '80px center',
-        markers: true,
       },
       delay: 0.1,
       duration: 1,
