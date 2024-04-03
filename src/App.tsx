@@ -35,10 +35,12 @@ function App() {
       y: 200,
       scrollTrigger: {
         trigger: galleryRef.current,
-        start: '80px center',
+        // start: '80px center',
+        start: '0 center',
+        markers: true
       },
       delay: 0.1,
-      duration: 1,
+      duration: 0.8,
       ease: "power1.inOut"
     },
     )
