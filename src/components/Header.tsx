@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitType from 'split-type'
@@ -8,8 +8,39 @@ gsap.registerPlugin(useGSAP, TextPlugin)
 
 const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScrollToGallery, onScrollToContact }: any) => {
     const [isOpen, setIsOpen] = useState(false)
+    const [isSticky, setIsSticky] = useState(false);
 
     const mobileNavRef = useRef<HTMLDivElement>(null)
+    const headerRef = useRef<HTMLElement>(null)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            const headerHeight = headerRef.current?.offsetHeight;
+
+            if (headerHeight) {
+                setIsSticky(offset > headerHeight);
+            }
+        };
+
+        const updateHeaderHeight = () => {
+            const headerHeight = headerRef.current?.offsetHeight;
+
+            if (headerHeight) {
+                setIsSticky(window.scrollY > headerHeight);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('resize', updateHeaderHeight);
+
+        updateHeaderHeight();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', updateHeaderHeight);
+        };
+    }, []);
 
     useGSAP(() => {
         const ourText = new SplitType('.sammylee-text', { types: 'chars' })
@@ -59,7 +90,6 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
     const openNavigation = () => {
         setIsOpen(true)
-
     }
 
     function closeNavigation() {
@@ -69,11 +99,11 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
         <>
             {isOpen && (
                 // OVERLAY
-                <div className='bg-black fixed min-h-screen top-0 left-0 bottom-0 right-0 opacity-50 z-2'></div>
+                <div className='bg-black fixed min-h-screen top-0 left-0 bottom-0 right-0 opacity-50 z-[9998]'></div>
             )}
 
             {isOpen && (
-                <div ref={mobileNavRef} className='bg-[#333333] w-[60vw] min-h-screen fixed z-[999] right-0 px-3'>
+                <div ref={mobileNavRef} className='bg-[#333333] w-[60vw] min-h-screen fixed z-[9999] right-0 px-3'>
                     <button onClick={() => closeNavigation()} className='absolute right-4 top-4'>
                         <svg xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0,0,256,256" width="20px" height="20px"><g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style={{ mixBlendMode: 'normal' }}><g transform="scale(8.53333,8.53333)"><path d="M7,4c-0.25587,0 -0.51203,0.09747 -0.70703,0.29297l-2,2c-0.391,0.391 -0.391,1.02406 0,1.41406l7.29297,7.29297l-7.29297,7.29297c-0.391,0.391 -0.391,1.02406 0,1.41406l2,2c0.391,0.391 1.02406,0.391 1.41406,0l7.29297,-7.29297l7.29297,7.29297c0.39,0.391 1.02406,0.391 1.41406,0l2,-2c0.391,-0.391 0.391,-1.02406 0,-1.41406l-7.29297,-7.29297l7.29297,-7.29297c0.391,-0.39 0.391,-1.02406 0,-1.41406l-2,-2c-0.391,-0.391 -1.02406,-0.391 -1.41406,0l-7.29297,7.29297l-7.29297,-7.29297c-0.1955,-0.1955 -0.45116,-0.29297 -0.70703,-0.29297z"></path></g></g></svg>
                     </button>
@@ -90,8 +120,8 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
                 </div>
             )}
 
-            <header className="bg-[url('/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] lg:py-5 xl:h-[650px]">
-                <div className="flex justify-between items-center">
+            <header ref={headerRef} className="bg-[url('/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] lg:py-5 xl:h-[650px]">
+                <div className={`sticky-header ${isSticky ? "sticky-out-of-header" : ''} flex justify-between items-center`}>
                     <div className="w-[44px] h-[35px] -ml-[10px] md:w-[60px] md:h-[45px]">
                         <img src="assets/logo.png" alt="SL Logo"></img>
                     </div>

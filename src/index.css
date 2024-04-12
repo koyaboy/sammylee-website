@@ -72,3 +72,25 @@
 .social-icon:hover path {
     fill: #000000;
 }
+
+.sticky-header.sticky-out-of-header {
+    background-color: transparent;
+    transition: all 0.3s ease-in;
+}
+
+.sticky-header.sticky-out-of-header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    padding: 8px 36px;
+    background-color: #333333;
+    box-shadow: 5px 8px 5px#333333;
+}
+
+@media screen and (min-width:1024px) {
+    .sticky-header.sticky-out-of-header {
+        padding: 20px 36px;
+    }
+}
