@@ -122,8 +122,8 @@ const Header = ({ onScrollToHome, onScrollToAbout, onScrollToDiscography, onScro
 
             <header ref={headerRef} className="bg-[url('/assets/sl-mobile.jpg')] bg-cover bg-no-repeat h-[165px] px-9 py-2 sm:h-[250px] md:h-[350px] lg:h-[500px] lg:py-5 xl:h-[650px]">
                 <div className={`sticky-header ${isSticky ? "sticky-out-of-header" : ''} flex justify-between items-center`}>
-                    <div className="w-[44px] h-[35px] -ml-[10px] md:w-[60px] md:h-[45px]">
-                        <img src="assets/logo.png" alt="SL Logo"></img>
+                    <div className="-ml-[10px]">
+                        <img src="assets/logo.png" alt="SL Logo" className='w-[44px] h-[35px] md:w-[60px] md:h-[45px]'></img>
                     </div>
 
                     <button className='min-[900px]:hidden' onClick={() => openNavigation()}>

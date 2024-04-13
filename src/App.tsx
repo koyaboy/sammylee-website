@@ -141,10 +141,11 @@ function App() {
 
           {/* ABOUT ME */}
           <div ref={aboutRef} className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-20 min-[900px]:gap-12">
-            <div className="aboutImg max-w-[675px] ml-auto mr-auto" >
+            <div className="aboutImg max-w-[675px] ml-auto mr-auto">
               <img src="assets/sl-about-me-mobile.jpg" alt="SL Image" className="w-full h-full min-[900px]:hidden" />
-              <img src="assets/sl-about-me-desktop.jpg" alt="SL Image" className="hidden min-[900px]:block" />
             </div>
+
+            <img src="assets/sl-about-me-desktop.jpg" alt="SL Image" className="aboutImg hidden min-[900px]:block h-[550px] min-[900px]:w-[400px] xl:w-[550px] xl:h-[632px]" />
 
             <div className="aboutText min-[900px]:flex min-[900px]:flex-col min-[900px]:gap-4 min-[900px]:justify-center">
               <div className="flex flex-col items-center gap-3">
@@ -200,18 +201,18 @@ function App() {
                 columnsCountBreakPoints={{ 350: 1, 768: 2, 1024: 3 }}
               >
                 <Masonry gutter="12px">
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033187/SammyLee-Website/sl-two.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033187/SammyLee-Website/sl-three.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033176/SammyLee-Website/sl-eleven.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-five.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-four.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033185/SammyLee-Website/sl-thirteen.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033183/SammyLee-Website/sl-six.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-fifteen.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033176/SammyLee-Website/sl-eight.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033181/SammyLee-Website/sl-seven.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033183/SammyLee-Website/sl-ten.jpg" alt="SL Image" className="gallery_img" />
-                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033178/SammyLee-Website/sl-nine.jpg" alt="SL Image" className="gallery_img" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033187/SammyLee-Website/sl-two.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033187/SammyLee-Website/sl-three.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033176/SammyLee-Website/sl-eleven.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-five.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-four.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033185/SammyLee-Website/sl-thirteen.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033183/SammyLee-Website/sl-six.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033177/SammyLee-Website/sl-fifteen.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033176/SammyLee-Website/sl-eight.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033181/SammyLee-Website/sl-seven.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033183/SammyLee-Website/sl-ten.jpg" alt="SL Image" className="gallery_img w-full h-full" />
+                  <img src="https://res.cloudinary.com/ds7qm0bwi/image/upload/f_auto,q_auto/v1713033178/SammyLee-Website/sl-nine.jpg" alt="SL Image" className="gallery_img w-full h-full" />
                 </Masonry>
               </ResponsiveMasonry>
             </div>

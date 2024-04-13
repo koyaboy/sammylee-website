@@ -30,7 +30,7 @@ const MusicPlayer = ({ title, src }: MusicPlayer) => {
     return (
         <div ref={musicPlayerRef}>
             <div>
-                <img src={`assets/covers/${title}.jpg`} alt={`${title} Music Cover`} />
+                <img className="w-full h-full" src={`assets/covers/${title}.jpg`} alt={`${title} Music Cover`} />
             </div>
             <AudioPlayer
                 layout='horizontal-reverse'
