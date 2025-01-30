@@ -15,11 +15,13 @@ This project was developed to give SammyLee **a professional online presence** a
 ---
 
 ## **🛠 Tech Stack**  
-Built with modern web technologies for speed and interactivity:  
+Built with modern web technologies for speed, interactivity, and seamless communication:  
 
-- ⚛ **React** – Component-based UI  
+- ⚛ **React** – Component-based UI framework  
 - 🟦 **TypeScript** – Type safety & scalability  
-- 🖥 **GSAP**
+- 🎭 **GSAP** – Smooth animations & interactive effects  
+- 📩 **EmailJS** – Direct email integration 
+- 🔗 **Axios** – Efficient API requests & data fetching  
 
 ---
 
@@ -27,6 +29,7 @@ Built with modern web technologies for speed and interactivity:
 ✔ **Music Streaming** – Play songs directly on the site 🎧  
 ✔ **Contact Form** – Send messages or collaboration requests directly to his email ✉️  
 ✔ **Smooth Animations** – Engaging user experience with interactive visuals 🎨  
+🚀 *More features coming soon...* Stay tuned! 👀  
 
 ---
 
