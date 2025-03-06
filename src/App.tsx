@@ -160,18 +160,30 @@ function App() {
             className="flex flex-col gap-5 mt-8 min-[900px]:flex-row min-[900px]:mt-20 min-[900px]:gap-12"
           >
             <div className="aboutImg max-w-[675px] ml-auto mr-auto">
-              <img
-                src="assets/sl-about-me-mobile.jpg"
-                alt="SL Image"
-                className="w-full h-full min-[900px]:hidden"
-              />
+              <picture>
+                <source
+                  srcSet="assets/sl-about-me-mobile.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="assets/sl-about-me-mobile.jpg"
+                  alt="SL Image"
+                  className="w-full h-full min-[900px]:hidden"
+                />
+              </picture>
             </div>
 
-            <img
-              src="assets/sl-about-me-desktop.jpg"
-              alt="SL Image"
-              className="aboutImg hidden min-[900px]:block h-[550px] min-[900px]:w-[400px] xl:w-[550px] xl:h-[632px]"
-            />
+            <picture>
+              <source
+                srcSet="assets/sl-about-me-desktop.webp"
+                type="image/webp"
+              />
+              <img
+                src="assets/sl-about-me-desktop.jpg"
+                alt="SL Image"
+                className="aboutImg hidden min-[900px]:block h-[550px] min-[900px]:w-[400px] xl:w-[550px] xl:h-[632px]"
+              />
+            </picture>
 
             <div className="aboutText min-[900px]:flex min-[900px]:flex-col min-[900px]:gap-4 min-[900px]:justify-center">
               <div className="flex flex-col items-center gap-3">
