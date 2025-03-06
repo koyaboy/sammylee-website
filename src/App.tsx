@@ -46,15 +46,20 @@ function App() {
       ease: "power1.inOut",
     });
 
-    gsap.from(".aboutImg", {
-      opacity: 0,
-      y: 300,
-      scrollTrigger: {
-        trigger: aboutRef.current,
-        start: "center 80%",
-      },
-      duration: 1,
-    });
+    gsap.fromTo(
+      ".aboutImg",
+      { opacity: 0, y: 300 }, // Ensure it matches CSS to prevent CLS
+      {
+        opacity: 1,
+        y: 0,
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "center 80%",
+        },
+        duration: 1,
+        ease: "power3.out",
+      }
+    );
 
     gsap.from(".aboutText", {
       opacity: 0,
